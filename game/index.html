@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Emberhold — a duel of small gods</title>
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div id="stage">
+  <header id="topbar">
+    <div class="hero foe" id="hero-foe">
+      <div class="portrait foe-portrait" aria-hidden="true"></div>
+      <div class="hero-info">
+        <div class="hero-name">Vexa, the Ashen Queen</div>
+        <div class="hero-life"><span class="heart">&hearts;</span><span id="foe-hp">25</span></div>
+      </div>
+      <div class="mana-gems" id="foe-mana"></div>
+      <div class="deck-count" id="foe-deck">20</div>
+    </div>
+    <div class="turn-banner" id="turn-banner">Your turn</div>
+    <div class="hero mine" id="hero-mine">
+      <div class="portrait my-portrait" aria-hidden="true"></div>
+      <div class="hero-info">
+        <div class="hero-name">Bram, the Hearth Warden</div>
+        <div class="hero-life"><span class="heart">&hearts;</span><span id="my-hp">25</span></div>
+      </div>
+      <div class="mana-gems" id="my-mana"></div>
+      <div class="deck-count" id="my-deck">20</div>
+    </div>
+  </header>
+
+  <main id="board">
+    <div class="lane foe-lane" id="lane-foe"></div>
+    <div class="mid-line">
+      <div class="log" id="log">The hearth is lit. Duel begins.</div>
+    </div>
+    <div class="lane my-lane" id="lane-mine"></div>
+  </main>
+
+  <footer id="handbar">
+    <div id="hand"></div>
+    <button id="end-turn" type="button">End turn</button>
+  </footer>
+
+  <section id="overlay" class="hidden">
+    <div class="screen" id="screen-title">
+      <h1>EMBERHOLD</h1>
+      <p class="tagline">A duel of small gods, played with embers.</p>
+      <p class="howto">Play minions and spells from your hand by spending mana. Each turn your mana grows.
+        Minions with <b>Guard</b> must be fought first; <b>Swift</b> minions strike the turn they arrive;
+        <b>Burn</b> sears the enemy queen when played. Break the enemy to 0 hearts before she breaks you.</p>
+      <button id="btn-start" type="button">Light the hearth</button>
+    </div>
+    <div class="screen hidden" id="screen-win">
+      <h1 class="win">THE EMBER IS YOURS</h1>
+      <p class="tagline">Vexa's crown cools to ash. The hearth burns on.</p>
+      <button id="btn-again-win" type="button">Duel again</button>
+    </div>
+    <div class="screen hidden" id="screen-loss">
+      <h1 class="loss">THE HEARTH GOES DARK</h1>
+      <p class="tagline">Vexa scatters your embers to the wind.</p>
+      <button id="btn-again-loss" type="button">Rekindle</button>
+    </div>
+  </section>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
